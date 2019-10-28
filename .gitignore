@@ -21,3 +21,7 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+src/main/java/me/oribuin/main/Info.java
+src/main/java/me/oribuin/main/Settings.java
+src/main/java/me/oribuin/commands/testers/EditTime.java
+src/main/java/me/oribuin/commands/testers/Tester.java
