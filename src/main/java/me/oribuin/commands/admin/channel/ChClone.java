@@ -26,7 +26,7 @@ public class ChClone extends Command {
 
         EmbedBuilder Clone = new EmbedBuilder()
                 .setColor(Color.decode(Info.COLOR))
-                .setAuthor("Purged Channel", "https://github.com/Oribuin/Lil-Ori/", "" + e.getJDA().getSelfUser().getAvatarUrl())
+                .setAuthor("Purged Channel", "https://github.com/Oribuin/Lil-Ori/")
                 .setFooter("Lil' Ori Bot v" + Info.VERSION)
                 .setDescription("Clone Created by: " + e.getAuthor().getAsMention() + "\n" +
                         "Cloned at: " + timec.getDayOfWeek() + " At: " + timec.getHour() + ":" + timec.getMinute());

@@ -31,7 +31,7 @@ public class GuildInfo extends Command {
 
             try {
             Embed.setColor(Objects.requireNonNull(e.getGuild().getOwner()).getColor());
-            Embed.setAuthor(e.getGuild().getName() + " - ID: " + e.getGuild().getId(), "https://github.com/Oribuin/Lil-Ori/", e.getJDA().getSelfUser().getAvatarUrl());
+            Embed.setAuthor(e.getGuild().getName() + " - ID: " + e.getGuild().getId(), "https://github.com/Oribuin/Lil-Ori/");
             Embed.setDescription("**Roles:** " + e.getGuild().getRoles().size() + "\n" +
                     "**Channels: **" + e.getGuild().getChannels().size() + "\n" +
                     "**Emojis: **" + e.getGuild().getEmotes().size() + "\n" +

@@ -28,13 +28,13 @@ public class JoinVC extends Command {
         AudioManager manager = guild.getAudioManager();
         VoiceChannel channel = e.getGuild().getMember(e.getAuthor()).getVoiceState().getChannel();
 
-        if (Objects.requireNonNull(Objects.requireNonNull(e.getGuild().getMember(e.getAuthor())).getVoiceState()).inVoiceChannel()) {
+        if(e.getGuild().getMember(e.getAuthor()).getVoiceState().inVoiceChannel()) {
             assert channel != null;
 
             manager.openAudioConnection(channel);
             EmbedBuilder Embed = new EmbedBuilder()
                     .setColor(Color.decode(Info.COLOR))
-                    .setAuthor("Joined Voice Channel", "https://github.com/Oribuin/Lil-Ori/", "" + e.getJDA().getSelfUser().getAvatarUrl())
+                    .setAuthor("Joined Voice Channel", "https://github.com/Oribuin/Lil-Ori/")
                     .setFooter("Lil' Ori v" + Info.VERSION)
                     .setDescription("**Channel:** " + channel.getName() + "\n" +
                             "**Requested By:** " + e.getAuthor().getAsMention());

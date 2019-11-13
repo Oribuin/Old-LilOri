@@ -22,7 +22,7 @@ public class BotInfo extends Command {
     protected void execute(CommandEvent e) {
         EmbedBuilder em = new EmbedBuilder()
                 .setColor(Color.decode(Info.COLOR))
-                .setAuthor("Lil' Ori's Information", "https://github.com/Oribuin/Lil-Ori/", "" + e.getJDA().getSelfUser().getAvatarUrl())
+                .setAuthor("Lil' Ori's Information", "https://github.com/Oribuin/Lil-Ori/")
                 .setFooter("Lil' Ori v" + Info.VERSION)
                 .setThumbnail("" + e.getJDA().getSelfUser().getAvatarUrl())
                 .setDescription("Created By: **Ori**#0004\n\n" +

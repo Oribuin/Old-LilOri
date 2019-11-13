@@ -27,7 +27,7 @@ public class ChCreate extends Command {
 
         EmbedBuilder Embed = new EmbedBuilder()
                 .setColor(Color.decode(Info.COLOR))
-                .setAuthor("Created Channel", "https://github.com/Oribuin/Lil-Ori/", "" + e.getJDA().getSelfUser().getAvatarUrl())
+                .setAuthor("Created Channel", "https://github.com/Oribuin/Lil-Ori/")
                 .setFooter("Lil' Ori v" + Info.VERSION)
                 .setDescription("Channel Created by: " + e.getAuthor().getAsMention() + "\n" +
                         "Created at: " + timec.getDayOfWeek() + " At: " + timec.getHour() + ":" + timec.getMinute());

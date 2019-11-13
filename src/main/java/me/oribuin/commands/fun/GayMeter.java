@@ -22,7 +22,7 @@ public class GayMeter extends Command {
     protected void execute(CommandEvent e) {
         EmbedBuilder Embed = new EmbedBuilder()
                 .setColor(Color.decode(Info.COLOR))
-                .setAuthor("Gay Meter", "https://github.com/Oribuin/Lil-Ori/", "" + e.getJDA().getSelfUser().getAvatarUrl())
+                .setAuthor("Gay Meter", "https://github.com/Oribuin/Lil-Ori/")
                 .setFooter("Lil' Ori v" + Info.VERSION);
 
         for (int i = 0; i < 1; i++) {

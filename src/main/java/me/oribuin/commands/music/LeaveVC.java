@@ -24,7 +24,7 @@ public class LeaveVC extends Command {
 
         EmbedBuilder Embed = new EmbedBuilder()
                 .setColor(Color.decode(Info.COLOR))
-                .setAuthor("Left Voice Channel", "https://github.com/Oribuin/Lil-Ori/", "" + e.getJDA().getSelfUser().getAvatarUrl())
+                .setAuthor("Left Voice Channel", "https://github.com/Oribuin/Lil-Ori/")
                 .setFooter("Lil' Ori v" + Info.VERSION)
                 .setDescription("**Requested By:** " + e.getAuthor().getAsMention());
         e.reply(Embed.build());

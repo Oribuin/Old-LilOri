@@ -43,7 +43,7 @@ public class Purge extends Command {
 
                 EmbedBuilder Purged = new EmbedBuilder()
                         .setColor(Color.decode(Info.COLOR))
-                        .setAuthor("Purged Messages", "https://github.com/Oribuin/Lil-Ori/", "" + e.getJDA().getSelfUser().getAvatarUrl())
+                        .setAuthor("Purged Messages", "https://github.com/Oribuin/Lil-Ori/")
                         .setFooter("Lil' Ori v" + Info.VERSION)
                         .setDescription("Amount: " + args[1] + "\n" +
                                 "Purged by: " + e.getAuthor().getAsMention() + "\n" +
@@ -60,7 +60,7 @@ public class Purge extends Command {
         } catch (IllegalArgumentException err) {
 
             if (e.toString().startsWith("java.lang.IllegalArgumentException:")) {
-                e.reply("You may only clear 2-100 messages at a time.");
+                e.reply("You may only clear 2-99 messages at a time.");
             } else {
                 e.reply("Messages older than 2 weeks cannot be cleared.");
             }

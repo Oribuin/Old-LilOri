@@ -24,7 +24,7 @@ public class UserAvatar extends Command {
 
         EmbedBuilder Embed = new EmbedBuilder()
                 .setColor(Color.decode(Info.COLOR))
-                .setAuthor("Lil' Ori's Avatars", "https://github.com/Oribuin/Lil-Ori/", "" + e.getJDA().getSelfUser().getAvatarUrl())
+                .setAuthor("Lil' Ori's Avatars", "https://github.com/Oribuin/Lil-Ori/")
                 .setFooter("Lil' Ori v" + Info.VERSION);
 
         try {

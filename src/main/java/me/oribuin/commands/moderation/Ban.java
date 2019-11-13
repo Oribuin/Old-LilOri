@@ -34,7 +34,7 @@ public class Ban extends Command {
             } else {
                 EmbedBuilder Embed = new EmbedBuilder()
                         .setColor(Color.decode(Info.COLOR))
-                        .setAuthor("Banned User", "https://github.com/Oribuin/Lil-Ori/", "" + e.getJDA().getSelfUser().getAvatarUrl())
+                        .setAuthor("Banned User", "https://github.com/Oribuin/Lil-Ori/")
                         .setFooter("Lil' Ori v" + Info.VERSION)
                         .setDescription("Kicked by: " + e.getAuthor().getAsMention() + "\n" + "User Kicked: " + e.getMessage().getMentionedMembers().get(0).getUser().getAsTag());
 

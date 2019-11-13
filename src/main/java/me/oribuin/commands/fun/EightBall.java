@@ -62,7 +62,7 @@ public class EightBall extends Command {
             } else {
                 EmbedBuilder ball = new EmbedBuilder()
                         .setColor(Color.decode(Info.COLOR))
-                        .setAuthor("Lil' Ori's Magic 8Ball", "https://github.com/Oribuin/Lil-Ori/", "" + e.getJDA().getSelfUser().getAvatarUrl())
+                        .setAuthor("Lil' Ori's Magic 8Ball", "https://github.com/Oribuin/Lil-Ori/")
                         .setFooter("Lil' Ori v" + Info.VERSION)
                         .setDescription(answers[randomInt]);
 

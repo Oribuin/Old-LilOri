@@ -24,7 +24,7 @@ public class BotPing extends Command {
 
 
         EmbedBuilder em = new EmbedBuilder()
-                .setAuthor("Latency", "https://github.com/Oribuin/Lil-Ori/", "" + e.getJDA().getSelfUser().getAvatarUrl())
+                .setAuthor("Latency", "https://github.com/Oribuin/Lil-Ori/")
                 .setFooter("Lil' Ori v" + Info.VERSION)
                 .setDescription("**Ping: **" + ping + "ms");
 
