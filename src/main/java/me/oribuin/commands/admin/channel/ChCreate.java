@@ -35,12 +35,11 @@ public class ChCreate extends Command {
         try {
 
             String[] args = e.getMessage().getContentRaw().split(" ");
-            String input = args[1];
 
             if (args[1].isEmpty()) {
                 e.reply("You must include a channel name.");
             } else {
-                e.getGuild().createTextChannel(input).queue(m -> {
+                e.getGuild().createTextChannel(args[1]).queue(m -> {
                     m.sendMessage(e.getAuthor().getAsMention()).queue();
                     m.sendMessage(Embed.build()).queue();
                 });

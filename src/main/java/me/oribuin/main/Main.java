@@ -45,6 +45,7 @@ public class Main extends ListenerAdapter {
         builder.setOwnerId("345406020450779149");
 
         builder.setPrefix(";");
+        builder.useHelpBuilder(false);
         //  Bot is in Online Mode
 //        /*
         builder.setStatus(OnlineStatus.ONLINE);

@@ -15,7 +15,7 @@ public class PermList extends Command {
         this.aliases = new String[]{"perms", "permissions"};
         this.help = "Find out the list of permissions Lil' Ori has access to.";
         this.guildOnly = true;
-        this.userPermissions = new Permission[]{Permission.ADMINISTRATOR};
+        //this.userPermissions = new Permission[]{Permission.ADMINISTRATOR};
         this.ownerCommand = Settings.OfflineMode;
     }
 
@@ -23,12 +23,12 @@ public class PermList extends Command {
     protected void execute(CommandEvent e) {
         EmbedBuilder em = new EmbedBuilder()
                 .setColor(Color.decode(Info.COLOR))
-                .setAuthor("Lil' Ori Permissions", "https://github.com/Oribuin/Lil-Ori/", "" + e.getJDA().getSelfUser().getAvatarUrl())
+                .setAuthor("Lil' Ori Permissions", "https://github.com/Oribuin/Lil-Ori/")
                 .setFooter("Lil' Ori v" + Info.VERSION)
                 .setDescription("**Total: ** " + e.getGuild().getSelfMember().getPermissions().size() + "/32 \n\n" +
                         "" + e.getGuild().getSelfMember().getPermissions().toString().replaceAll(
-                        ",", "\n**-**").replaceAll(
-                        "\\[", "\n**-** ").replaceAll(
+                        ",", " **-**").replaceAll(
+                        "\\[", " **-** ").replaceAll(
                         "]", "")
                 );
 
