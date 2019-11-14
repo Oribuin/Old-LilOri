@@ -13,7 +13,7 @@ public class GayMeter extends Command {
         this.name = "GayMeter";
         this.aliases = new String[]{"howgay", "gay"};
         this.help = "On a scale from 1-100, How gay are you?";
-        this.cooldown = 5;
+        this.cooldown = 0;
         this.cooldownScope = CooldownScope.USER;
         this.ownerCommand = Settings.OfflineMode;
     }
@@ -25,10 +25,8 @@ public class GayMeter extends Command {
                 .setAuthor("Gay Meter", "https://github.com/Oribuin/Lil-Ori/")
                 .setFooter("Lil' Ori v" + Info.VERSION);
 
-        for (int i = 0; i < 1; i++) {
-            int randomInt = (int) (101.0 * Math.random());
-            Embed.setDescription("**" + randomInt + "% Gay** :gay_pride_flag:");
-        }
+        int randomInt = (int) (101.0 * Math.random());
+        Embed.setDescription("**" + randomInt + "% Gay** :gay_pride_flag:");
 
         e.reply(Embed.build());
     }

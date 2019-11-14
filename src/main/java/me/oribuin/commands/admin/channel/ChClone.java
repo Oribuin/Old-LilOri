@@ -47,19 +47,19 @@ public class ChClone extends Command {
                             "Cloned Channel: #" + e.getChannel().getName() + "\n" +
                             "Cloned at: " + timec.getDayOfWeek() + " At: " + timec.getHour() + ":" + timec.getMinute());
 
-            // Deletes Channel.
-            e.getMessage().getTextChannel().delete().queue();
-
             // Create the channel clone, Copies the previous channel's info before it is removed.
             e.getGuild().createTextChannel(e.getChannel().getName())
+                    .setPosition(e.getTextChannel().getPosition())
                     .setTopic(e.getTextChannel().getTopic())
                     .setNSFW(e.getTextChannel().isNSFW())
                     .setSlowmode(e.getTextChannel().getSlowmode())
-                    .setPosition(e.getTextChannel().getPosition())
                     .setParent(e.getTextChannel().getParent()).queue(m -> {
                         // Once it's done it pings the message author and sends Embed
                 m.sendMessage(e.getAuthor().getAsMention()).queue();
                 m.sendMessage(Clone1.build()).queue();
+
+                // Deletes Channel.
+                e.getMessage().getTextChannel().delete().queue();
 
                 // Sends Embed to owner just in-case there are complications.
                 m.getGuild().getOwner().getUser().openPrivateChannel().queue(msg -> {
@@ -88,20 +88,22 @@ public class ChClone extends Command {
                                     "Cloned Channel: #" + channel.getName() + "\n" +
                                     "Cloned at: " + timec.getDayOfWeek() + " At: " + timec.getHour() + ":" + timec.getMinute());
 
-                    e.getMessage().getMentionedChannels().get(0).delete().queue();
                     // Adds a reaction to clarify that the channel was cloned, Just in-case?
                     e.getMessage().addReaction("✅").queue();
 
                     // Same thing as before except it uses the channel mentioned instead of the channel the message was send in.
                     e.getGuild().createTextChannel(channel.getName())
+                            .setPosition(channel.getPosition())
                             .setTopic(channel.getTopic())
                             .setNSFW(channel.isNSFW())
                             .setSlowmode(channel.getSlowmode())
-                            .setPosition(channel.getPosition())
                             .setParent(channel.getParent()).queue(m -> {
 
                         m.sendMessage(e.getAuthor().getAsMention()).queue();
                         m.sendMessage(Clone2.build()).queue();
+
+                        // Deletes Channel.
+                        e.getMessage().getMentionedChannels().get(0).delete().queue();
 
                         m.getGuild().getOwner().getUser().openPrivateChannel().queue(msg -> {
                             msg.sendMessage(Clone2.build()).queue();
@@ -113,7 +115,8 @@ public class ChClone extends Command {
                 }
             }
         } else {
-            e.reply("You haven't mentioned a correct channel, Are you sure you input the right args? `$chclone #<channel>");
+            // Just In-case
+            e.reply("You haven't mentioned a correct channel, Are you sure you input the right args? `;chclone #<channel>");
         }
     }
 }

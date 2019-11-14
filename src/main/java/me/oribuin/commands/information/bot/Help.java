@@ -63,7 +63,7 @@ public class Help extends Command {
                 || args[1].equalsIgnoreCase("Moderation")) {
 
             Embed.setDescription("**Moderation Commands** \n" +
-                    ";purge - Purge messages from the channel.\n" +
+                    ";purge [Amount]- Purge messages from the channel.\n" +
                     ";kick @[user] - Kick a user from the server. \n" +
                     ";ban @[user] - Ban a user from the server.\n\n" +
                     "Command Aliases on GitHub - ;github");
@@ -80,6 +80,8 @@ public class Help extends Command {
                     ";say [message] - Make the bot say something.\n" +
                     "**-** :speech_balloon: Channel: \n" +
                     ";chcreate [name] - Create a channel. \n" +
+                    ";clone #[ChannelName] - Clone a Channel.\n" +
+                    ";chdelete [ChannelID] - Delete a Channel.\n" +
                     ";slowmode [time] - Set the channel's slowmode. \n\n" +
                     "Command Aliases on GitHub - ;github");
 

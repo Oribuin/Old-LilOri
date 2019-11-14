@@ -50,15 +50,9 @@ public class EightBall extends Command {
 
         String[] args = e.getMessage().getContentRaw().split(" ");
 
-        if (e.getGuild().getId().equals("481741000365178881")) {
-            e.reply("This guild is forbidden to use this command.");
-            return;
-        }
-
         try {
-            if (e.getMessage().getContentRaw().equals(args[0])) {
-                e.reply("Please input a question for the bot.");
-
+            if (args.length < 2) {
+                e.reply("You must include a question.");
             } else {
                 EmbedBuilder ball = new EmbedBuilder()
                         .setColor(Color.decode(Info.COLOR))

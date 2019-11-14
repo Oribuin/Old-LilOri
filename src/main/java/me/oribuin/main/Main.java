@@ -8,7 +8,11 @@ import me.oribuin.commands.admin.bot.PermList;
 import me.oribuin.commands.admin.bot.SayCMD;
 import me.oribuin.commands.admin.channel.ChClone;
 import me.oribuin.commands.admin.channel.ChCreate;
+import me.oribuin.commands.admin.channel.ChDelete;
 import me.oribuin.commands.admin.channel.ChSlowmode;
+import me.oribuin.commands.admin.guild.GuClone;
+import me.oribuin.commands.admin.ori.DeleteServer;
+import me.oribuin.commands.admin.ori.GetInvite;
 import me.oribuin.commands.admin.ori.LeaveServer;
 import me.oribuin.commands.fun.EightBall;
 import me.oribuin.commands.fun.GayMeter;
@@ -62,49 +66,36 @@ public class Main extends ListenerAdapter {
         builder.addCommands(
                 new Tester(),
                 //Ori Commands
-                new LeaveServer(),
+                new LeaveServer(), new GetInvite(), new DeleteServer(),
+
                 //Help Command
-                new Help(),
-                new GuildList(new EventWaiter()),
+                new Help(), new GuildList(new EventWaiter()),
 
                 //Admin
                 // Bot
                 new PermList(),
+                // Guilds
+                new GuClone(),
                 // Channels
 
-                new ChCreate(),
-                new ChSlowmode(),
-                new ChClone(),
-                new EditTime(),
+                new ChCreate(), new ChDelete(), new ChSlowmode(), new ChClone(), new EditTime(),
 
                 //Moderation
-                new Purge(),
-                new Kick(),
-                new Ban(),
+                new Purge(), new Kick(), new Ban(),
 
                 //Fun
-                new GayMeter(),
-                new EightBall(),
-                new SayCMD(),
-                // Ouc
+                new GayMeter(), new EightBall(), new SayCMD(),
                 //Information
                 // User
-                new UserAvatar(),
-                new UserInfo(),
+                new UserAvatar(), new UserInfo(),
                 // Bot
-                new BotPing(),
-                new BotInfo(),
-                new GitHub(),
+                new BotPing(), new BotInfo(), new GitHub(),
                 // Guild
-                new GuildInfo(),
-                new GuildRoles(new EventWaiter()),
-                new GuildMembers(new EventWaiter()),
-                new GuildChannels(new EventWaiter()),
+                new GuildInfo(), new GuildRoles(new EventWaiter()), new GuildMembers(new EventWaiter()), new GuildChannels(new EventWaiter()),
 
                 //Music
                 // Basic Voice Channel
-                new JoinVC(),
-                new LeaveVC()
+                new JoinVC(), new LeaveVC()
 
         );
 

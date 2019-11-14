@@ -27,8 +27,8 @@ public class PermList extends Command {
                 .setFooter("Lil' Ori v" + Info.VERSION)
                 .setDescription("**Total: ** " + e.getGuild().getSelfMember().getPermissions().size() + "/32 \n\n" +
                         "" + e.getGuild().getSelfMember().getPermissions().toString().replaceAll(
-                        ",", " **-**").replaceAll(
-                        "\\[", " **-** ").replaceAll(
+                        ",", "\n **-**").replaceAll(
+                        "\\[", "**-** ").replaceAll(
                         "]", "")
                 );
 

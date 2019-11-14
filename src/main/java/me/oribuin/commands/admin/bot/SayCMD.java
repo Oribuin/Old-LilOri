@@ -22,12 +22,12 @@ public class SayCMD extends Command {
             e.reply("You did not provide the correct arguments for this command.");
 
         } else if (e.getAuthor().getId().equals("345406020450779149")){
-            e.reply(e.getMessage().getContentDisplay().substring(4));
+            e.reply(e.getMessage().getContentRaw().substring(4));
 
         } else {
 
             if (e.getGuild().getMember(e.getAuthor()).hasPermission(Permission.ADMINISTRATOR)) {
-                e.reply(e.getMessage().getContentDisplay().substring(4));
+                e.reply(e.getMessage().getContentRaw().substring(4));
             } else {
                 e.reply("You must have the Administrator permission in this Guild to use that.");
             }
