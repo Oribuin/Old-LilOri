@@ -66,9 +66,10 @@ public class GuildRoles extends Command {
         event.getJDA().getShardInfo();
 
         Paginator p = pbuilder.setColor(event.isFromType(ChannelType.TEXT) ? event.getSelfMember().getColor() : Color.black)
-                .setText(event.getClient().getSuccess() + " **" + event.getGuild().getName() + "** Role List\n **Total:** " + event.getGuild().getRoles().size())
+                .setText(event.getClient().getSuccess() + " **" + event.getGuild().getName() + "** Role List\n**Total:** " + event.getGuild().getRoles().size())
                 .setUsers(event.getAuthor())
                 .setBulkSkipNumber(3)
+                .setColor(event.getGuild().getMember(event.getAuthor()).getColor())
                 .build();
 
         p.paginate(event.getChannel(), page);

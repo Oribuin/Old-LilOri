@@ -49,8 +49,8 @@ public class ChClone extends Command {
 
             // Create the channel clone, Copies the previous channel's info before it is removed.
             e.getGuild().createTextChannel(e.getChannel().getName())
-                    .setPosition(e.getTextChannel().getPosition())
                     .setTopic(e.getTextChannel().getTopic())
+                    .setPosition(e.getTextChannel().getPosition())
                     .setNSFW(e.getTextChannel().isNSFW())
                     .setSlowmode(e.getTextChannel().getSlowmode())
                     .setParent(e.getTextChannel().getParent()).queue(m -> {
@@ -93,8 +93,8 @@ public class ChClone extends Command {
 
                     // Same thing as before except it uses the channel mentioned instead of the channel the message was send in.
                     e.getGuild().createTextChannel(channel.getName())
-                            .setPosition(channel.getPosition())
                             .setTopic(channel.getTopic())
+                            .setPosition(channel.getPosition())
                             .setNSFW(channel.isNSFW())
                             .setSlowmode(channel.getSlowmode())
                             .setParent(channel.getParent()).queue(m -> {

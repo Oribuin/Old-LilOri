@@ -21,26 +21,26 @@ public class BotPing extends Command {
     @Override
     protected void execute(CommandEvent e) {
         long ping = e.getJDA().getGatewayPing();
-
+        //int ping = 300;
 
         EmbedBuilder em = new EmbedBuilder()
                 .setAuthor("Latency", "https://github.com/Oribuin/Lil-Ori/")
                 .setFooter("Lil' Ori v" + Info.VERSION)
                 .setDescription("**Ping: **" + ping + "ms");
 
-        if (ping < 100) {
+        if (ping < 101) {
             em.setColor(Color.green);
         }
 
         if (ping > 100) {
-            em.setColor(Color.yellow);
+            em.setColor(Color.decode("#ffff00"));
         }
 
-        if (ping > 200) {
-            em.setColor(Color.orange);
+        if (ping > 199) {
+            em.setColor(Color.decode("#ffa500"));
         }
 
-        if (ping > 300) {
+        if (ping > 299) {
             em.setColor(Color.red);
         }
 

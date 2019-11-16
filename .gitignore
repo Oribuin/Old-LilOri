@@ -27,3 +27,9 @@ src/main/java/me/oribuin/commands/testers/Tester.java
 src/main/java/me/oribuin/commands/admin/guild/GuClone.java
 src/main/java/me/oribuin/commands/admin/ori/DeleteServer.java
 src/main/java/me/oribuin/commands/admin/ori/GetInvite.java
+src/main/java/me/oribuin/commands/admin/ori/logs/logging.txt
+src/main/java/me/oribuin/commands/admin/ori/ImgLog.java
+src/main/java/me/oribuin/commands/admin/ori/logging.txt
+Startup Lil Ori.lnk
+src/main/java/me/oribuin/commands/admin/ori/MsgLog.java
+src/main/java/me/oribuin/commands/information/bot/GetUsage.java

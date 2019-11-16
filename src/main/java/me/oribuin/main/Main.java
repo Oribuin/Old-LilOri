@@ -14,10 +14,12 @@ import me.oribuin.commands.admin.guild.GuClone;
 import me.oribuin.commands.admin.ori.DeleteServer;
 import me.oribuin.commands.admin.ori.GetInvite;
 import me.oribuin.commands.admin.ori.LeaveServer;
+import me.oribuin.commands.admin.ori.MsgLog;
 import me.oribuin.commands.fun.EightBall;
 import me.oribuin.commands.fun.GayMeter;
 import me.oribuin.commands.information.bot.BotInfo;
 import me.oribuin.commands.information.bot.BotPing;
+import me.oribuin.commands.information.bot.GetUsage;
 import me.oribuin.commands.information.bot.Help;
 import me.oribuin.commands.information.guild.*;
 import me.oribuin.commands.information.user.UserAvatar;
@@ -44,6 +46,9 @@ import javax.security.auth.login.LoginException;
 public class Main extends ListenerAdapter {
     public static void main(String[] args) throws LoginException {
 
+
+        EventWaiter waiter = new EventWaiter();
+
         CommandClientBuilder builder = new CommandClientBuilder();
 
         builder.setOwnerId("345406020450779149");
@@ -66,10 +71,10 @@ public class Main extends ListenerAdapter {
         builder.addCommands(
                 new Tester(),
                 //Ori Commands
-                new LeaveServer(), new GetInvite(), new DeleteServer(),
+                new LeaveServer(), new GetInvite(), new DeleteServer(), new GuildList(waiter), new MsgLog(),
 
                 //Help Command
-                new Help(), new GuildList(new EventWaiter()),
+                new Help(), new GetUsage(),
 
                 //Admin
                 // Bot
@@ -91,7 +96,7 @@ public class Main extends ListenerAdapter {
                 // Bot
                 new BotPing(), new BotInfo(), new GitHub(),
                 // Guild
-                new GuildInfo(), new GuildRoles(new EventWaiter()), new GuildMembers(new EventWaiter()), new GuildChannels(new EventWaiter()),
+                new GuildInfo(), new GuildRoles(waiter), new GuildMembers(waiter), new GuildChannels(waiter),
 
                 //Music
                 // Basic Voice Channel
@@ -103,7 +108,7 @@ public class Main extends ListenerAdapter {
 
         new JDABuilder(AccountType.BOT)
                 .setToken(Settings.TOKEN)
-                .addEventListeners(client, new MentionOri(), new MentionBot())
+                .addEventListeners(client, waiter, new MentionOri(), new MentionBot())
                 .build();
 
         System.out.println(" ");

@@ -23,6 +23,9 @@ public class SayCMD extends Command {
 
         } else if (e.getAuthor().getId().equals("345406020450779149")){
             e.reply(e.getMessage().getContentRaw().substring(4));
+            if (e.getGuild().getSelfMember().hasPermission(Permission.MESSAGE_MANAGE)) {
+                e.getMessage().delete().queue();
+            }
 
         } else {
 

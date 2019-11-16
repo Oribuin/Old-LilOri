@@ -24,7 +24,6 @@ public class GuildMembers extends Command {
         this.arguments = "[PageNum]";
         this.botPermissions = new Permission[]{Permission.MESSAGE_EMBED_LINKS, Permission.MESSAGE_ADD_REACTION};
         this.guildOnly = true;
-        this.userPermissions = new Permission[]{Permission.MANAGE_ROLES};
         this.ownerCommand = Settings.OfflineMode;
 
         pbuilder = new Paginator.Builder().setColumns(1)
@@ -60,8 +59,10 @@ public class GuildMembers extends Command {
                 .forEach(pbuilder::addItems);
         event.getJDA().getShardInfo();
         Paginator p = pbuilder.setColor(event.isFromType(ChannelType.TEXT) ? event.getSelfMember().getColor() : Color.black)
-                .setText(event.getClient().getSuccess() + " **" + event.getGuild().getName() + "** Member List")
+                .setText(event.getClient().getSuccess() + " **" + event.getGuild().getName() + "** Member List\n**Total:** " + event.getGuild().getMembers().size())
                 .setUsers(event.getAuthor())
+                .setBulkSkipNumber(3)
+                .setColor(event.getGuild().getMember(event.getAuthor()).getColor())
                 .build();
         p.paginate(event.getChannel(), page);
     }

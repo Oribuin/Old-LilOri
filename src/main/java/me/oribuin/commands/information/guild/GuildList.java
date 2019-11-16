@@ -59,6 +59,7 @@ public class GuildList extends Command {
         Paginator p = pbuilder.setColor(event.isFromType(ChannelType.TEXT) ? event.getSelfMember().getColor() : Color.black)
                 .setText(event.getClient().getSuccess() + " Guilds that **" + event.getSelfUser().getName() + "** is connected to" + (" (Shard ID " + event.getJDA().getShardInfo().getShardId() + "):"))
                 .setUsers(event.getAuthor())
+                .setColor(event.getGuild().getMember(event.getAuthor()).getColor())
                 .build();
         p.paginate(event.getChannel(), page);
     }

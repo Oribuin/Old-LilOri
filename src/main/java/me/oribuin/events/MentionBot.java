@@ -10,12 +10,12 @@ public class MentionBot extends ListenerAdapter {
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
 
         String[] responses = {
-                "Hello, " + event.getAuthor().getAsMention() + "! <a:PanGLoveG:623375387833139210>",
-                "How are you? <a:PanGLoveG:623375387833139210>",
-                "How can I help? <a:PanGLoveG:623375387833139210>",
-                "¡Hola! <a:PanGLoveG:623375387833139210>",
-                "¡Hola, mucho gustó! <a:PanGLoveG:623375387833139210>",
-                "¿Como estas? <a:PanGLoveG:623375387833139210>",
+                "Hello, " + event.getAuthor().getAsMention() + "! <a:PanGLoveG:644305899682398208>",
+                "How are you? <a:PanGLoveG:644305899682398208>",
+                "How can I help? <a:PanGLoveG:644305899682398208>",
+                "¡Hola! <a:PanGLoveG:644305899682398208>",
+                "¡Hola, mucho gustó! <a:PanGLoveG:644305899682398208>",
+                "¿Como estas? <a:PanGLoveG:644305899682398208>",
 
         };
 
