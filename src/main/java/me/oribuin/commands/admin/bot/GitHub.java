@@ -21,6 +21,6 @@ public class GitHub extends Command {
     @Override
     protected void execute(CommandEvent e) {
 
-        e.reply(e.getAuthor().getAsMention() + ", https://github.com/Oribuin/lil-ori");
+        e.reply(e.getAuthor().getAsMention() + ", https://github.com/Oribuin/Lil-Ori");
     }
 }

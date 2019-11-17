@@ -81,7 +81,7 @@ public class Help extends Command {
                     "**-** :speech_balloon: Channel: \n" +
                     ";chcreate [name] - Create a channel. \n" +
                     ";clone #[ChannelName] - Clone a Channel.\n" +
-                    ";chdelete [ChannelID] - Delete a Channel.\n" +
+                    ";chdelete #[ChannelName] - Delete a Channel.\n" +
                     ";slowmode [time] - Set the channel's slowmode. \n\n" +
                     "Command Aliases on GitHub - ;github");
 

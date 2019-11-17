@@ -53,7 +53,8 @@ public class Purge extends Command {
 
                 e.getMessage().delete().queue();
 
-                channel.deleteMessages(msgs).queue();
+                channel.purgeMessages(msgs);
+                //channel.deleteMessages(msgs).queue();
                 e.reply(Purged.build());
             }
 

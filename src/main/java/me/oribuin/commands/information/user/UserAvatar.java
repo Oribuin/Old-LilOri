@@ -37,7 +37,8 @@ public class UserAvatar extends Command {
             } else if (args[1].equals(e.getMessage().getMentionedUsers().get(0).getAsMention())) {
                 Embed.setImage(e.getMessage().getMentionedUsers().get(0).getAvatarUrl());
                 e.reply(Embed.build());
-
+            }
+/*
             } else if (args[1].equals(e.getGuild().getMemberById(args[1]).getId())) {
                 Embed.setImage(e.getGuild().getMemberById(args[1]).getUser().getAvatarUrl());
                 e.reply(Embed.build());
@@ -46,7 +47,7 @@ public class UserAvatar extends Command {
                 Embed.setImage(e.getGuild().getMemberByTag(args[1]).getUser().getAvatarUrl());
                 e.reply(Embed.build());
             }
-/*
+
         } catch (IllegalArgumentException err) {
             if (e.getMessage().getMentionedUsers().isEmpty()) {
                 e.reply(e.getAuthor().getAsMention() + ", You do not have a profile picture I can collect.");

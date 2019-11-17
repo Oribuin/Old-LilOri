@@ -59,7 +59,7 @@ public class GuildChannels extends Command {
                 .forEach(pbuilder::addItems);
         event.getJDA().getShardInfo();
         Paginator p = pbuilder.setColor(event.isFromType(ChannelType.TEXT) ? event.getSelfMember().getColor() : Color.black)
-                .setText(event.getClient().getSuccess() + " **" + event.getGuild().getName() + "** Channel List\n **Total:** " + event.getGuild().getChannels().size())
+                .setText(event.getClient().getSuccess() + " **" + event.getGuild().getName() + "** Channel List\n**Total:** " + event.getGuild().getChannels().size())
                 .setUsers(event.getAuthor())
                 .setColor(event.getGuild().getMember(event.getAuthor()).getColor())
                 .build();

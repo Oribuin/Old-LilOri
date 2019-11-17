@@ -25,15 +25,12 @@ public class BotInfo extends Command {
                 .setAuthor("Lil' Ori's Information", "https://github.com/Oribuin/Lil-Ori/")
                 .setFooter("Lil' Ori v" + Info.VERSION)
                 .setThumbnail("" + e.getJDA().getSelfUser().getAvatarUrl())
-                .setDescription("Created By: **Ori**#0004\n\n" +
-                        "**Libraries:**\n" +
-                        "Discord JDA\n" +
-                        "JDA Utilities\n" +
-                        "LavaPlayer");
-
-        em.addField("Guilds", "" + e.getJDA().getGuilds().size(), true);
-        em.addField("Users", "" + e.getJDA().getUsers().size(), true);
-        em.addField("Commands", String.valueOf(e.getClient().getCommands().size()), true);
+                .setDescription("Created By: **Ori**#0004\n\n" )
+                .addField("⠀", "[Github](https://github.com/Oribuin/Lil-Ori/)", false)
+                .addField("⠀", "Website Coming Soon", false)
+                .addField("Guilds", "" + e.getJDA().getGuilds().size(), false)
+                .addField("Users", "" + e.getJDA().getUsers().size(), true)
+                .addField("Commands", String.valueOf(e.getClient().getCommands().size()), true);
 
         e.reply(em.build());
     }

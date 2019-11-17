@@ -11,12 +11,12 @@ import me.oribuin.commands.admin.channel.ChCreate;
 import me.oribuin.commands.admin.channel.ChDelete;
 import me.oribuin.commands.admin.channel.ChSlowmode;
 import me.oribuin.commands.admin.guild.GuClone;
-import me.oribuin.commands.admin.ori.DeleteServer;
-import me.oribuin.commands.admin.ori.GetInvite;
-import me.oribuin.commands.admin.ori.LeaveServer;
-import me.oribuin.commands.admin.ori.MsgLog;
+import me.oribuin.commands.admin.ori.*;
 import me.oribuin.commands.fun.EightBall;
 import me.oribuin.commands.fun.GayMeter;
+import me.oribuin.commands.hangout.EmbedEdit;
+import me.oribuin.commands.hangout.MsgLog;
+import me.oribuin.commands.hangout.SayEmbed;
 import me.oribuin.commands.information.bot.BotInfo;
 import me.oribuin.commands.information.bot.BotPing;
 import me.oribuin.commands.information.bot.GetUsage;
@@ -34,11 +34,9 @@ import me.oribuin.commands.testers.Tester;
 import me.oribuin.events.MentionBot;
 import me.oribuin.events.MentionOri;
 import net.dv8tion.jda.api.AccountType;
-import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
-import net.dv8tion.jda.api.hooks.EventListener;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import javax.security.auth.login.LoginException;
@@ -52,6 +50,8 @@ public class Main extends ListenerAdapter {
         CommandClientBuilder builder = new CommandClientBuilder();
 
         builder.setOwnerId("345406020450779149");
+
+        builder.setEmojis("<a:Agree:645279978929258506>", "⚠️", "<a:Disagree:645279979650809856>");
 
         builder.setPrefix(";");
         builder.useHelpBuilder(false);
@@ -71,7 +71,7 @@ public class Main extends ListenerAdapter {
         builder.addCommands(
                 new Tester(),
                 //Ori Commands
-                new LeaveServer(), new GetInvite(), new DeleteServer(), new GuildList(waiter), new MsgLog(),
+                new LeaveServer(), new GetInvite(), new DeleteServer(), new GuildList(waiter), new MsgLog(), new SayEmbed(), new EmbedEdit(),
 
                 //Help Command
                 new Help(), new GetUsage(),

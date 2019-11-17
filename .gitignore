@@ -33,3 +33,7 @@ src/main/java/me/oribuin/commands/admin/ori/logging.txt
 Startup Lil Ori.lnk
 src/main/java/me/oribuin/commands/admin/ori/MsgLog.java
 src/main/java/me/oribuin/commands/information/bot/GetUsage.java
+src/main/java/me/oribuin/main/FormatSaves
+src/main/java/me/oribuin/commands/hangout/FormatSaves
+src/main/java/me/oribuin/commands/hangout/MsgLog.java
+src/main/java/me/oribuin/commands/hangout/SayEmbed.java

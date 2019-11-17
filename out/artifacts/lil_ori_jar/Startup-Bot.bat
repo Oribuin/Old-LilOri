@@ -1,1 +1,1 @@
-java -jar lilori.main.jar
+java -jar lilori.jar
