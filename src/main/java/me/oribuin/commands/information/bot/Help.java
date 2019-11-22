@@ -21,7 +21,6 @@ public class Help extends Command {
 
     @Override
     protected void execute(CommandEvent e) {
-
         String[] args = e.getMessage().getContentRaw().split(" ", 2);
         EmbedBuilder Embed = new EmbedBuilder()
                 .setColor(Color.decode(Info.COLOR))
@@ -87,15 +86,27 @@ public class Help extends Command {
 
             e.reply(e.getClient().getSuccess() + " Help Menu - Page 4");
             e.reply(Embed.build());
+
+        } else if (args[1].equals("5")
+        || args[1].equalsIgnoreCase("Other")) {
+
+            Embed.setDescription("**Other Commands** \n" +
+                    ";github - The GitHub Link for Lil' Ori. \n" +
+                    ";Suggest - Suggest new features to Lil' Ori.\n" +
+                    ";Invite - The Invite Link for Lil' Ori. \n\n" +
+                    "Command Aliases on GitHub - ;github");
+
+            e.reply(e.getClient().getSuccess() + " Help Menu - Page 5");
+            e.reply(Embed.build());
         } else {
 
-            Embed.setDescription("**Pages:** \n\n" +
-                    "Page One: ;help 1/Info\n" +
-                    "Page Two: ;help 2/Fun\n" +
-                    "Page Three: ;help 3/Moderation\n" +
-                    "Page Four: ;help 4/Admin");
+            e.reply(e.getClient().getWarning() + " Please input a correct page number.");
+            Embed.setDescription("Page One: Info\n" +
+                    "Page Two: Fun\n" +
+                    "Page Three: Moderation\n" +
+                    "Page Four: Admin\n" +
+                    "Page Five: Other");
 
-            e.reply(e.getClient().getWarning() + " You have input the wrong page name/number.");
             e.reply(Embed.build());
         }
     }

@@ -14,13 +14,9 @@ import me.oribuin.commands.admin.guild.GuClone;
 import me.oribuin.commands.admin.ori.*;
 import me.oribuin.commands.fun.EightBall;
 import me.oribuin.commands.fun.GayMeter;
-import me.oribuin.commands.hangout.EmbedEdit;
 import me.oribuin.commands.hangout.MsgLog;
 import me.oribuin.commands.hangout.SayEmbed;
-import me.oribuin.commands.information.bot.BotInfo;
-import me.oribuin.commands.information.bot.BotPing;
-import me.oribuin.commands.information.bot.GetUsage;
-import me.oribuin.commands.information.bot.Help;
+import me.oribuin.commands.information.bot.*;
 import me.oribuin.commands.information.guild.*;
 import me.oribuin.commands.information.user.UserAvatar;
 import me.oribuin.commands.information.user.UserInfo;
@@ -34,9 +30,11 @@ import me.oribuin.commands.testers.Tester;
 import me.oribuin.events.MentionBot;
 import me.oribuin.events.MentionOri;
 import net.dv8tion.jda.api.AccountType;
+import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
+import net.dv8tion.jda.api.entities.Invite;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import javax.security.auth.login.LoginException;
@@ -57,8 +55,9 @@ public class Main extends ListenerAdapter {
         builder.useHelpBuilder(false);
         //  Bot is in Online Mode
 //        /*
+
         builder.setStatus(OnlineStatus.ONLINE);
-        builder.setActivity(Activity.watching("Version v" + Info.VERSION));
+        builder.setActivity(Activity.streaming("v1.0.8", "https://github.com/Oribuin/Lil-Ori/"));
 //        */
 
         // Bot is in Offline Mode
@@ -69,9 +68,11 @@ public class Main extends ListenerAdapter {
 
 
         builder.addCommands(
+                // Info Commands
+                new InviteLink(), new Suggest(), new GitHub(),
                 new Tester(),
                 //Ori Commands
-                new LeaveServer(), new GetInvite(), new DeleteServer(), new GuildList(waiter), new MsgLog(), new SayEmbed(), new EmbedEdit(),
+                new LeaveServer(), new GetInvite(), new DeleteServer(), new GuildList(waiter), new MsgLog(), new SayEmbed(),
 
                 //Help Command
                 new Help(), new GetUsage(),
@@ -94,7 +95,7 @@ public class Main extends ListenerAdapter {
                 // User
                 new UserAvatar(), new UserInfo(),
                 // Bot
-                new BotPing(), new BotInfo(), new GitHub(),
+                new BotPing(), new BotInfo(),
                 // Guild
                 new GuildInfo(), new GuildRoles(waiter), new GuildMembers(waiter), new GuildChannels(waiter),
 
@@ -105,8 +106,7 @@ public class Main extends ListenerAdapter {
         );
 
         CommandClient client = builder.build();
-
-        new JDABuilder(AccountType.BOT)
+         JDA jda = new JDABuilder(AccountType.BOT)
                 .setToken(Settings.TOKEN)
                 .addEventListeners(client, waiter, new MentionOri(), new MentionBot())
                 .build();

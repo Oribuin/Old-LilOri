@@ -26,9 +26,9 @@ public class BotInfo extends Command {
                 .setFooter("Lil' Ori v" + Info.VERSION)
                 .setThumbnail("" + e.getJDA().getSelfUser().getAvatarUrl())
                 .setDescription("Created By: **Ori**#0004\n\n" )
-                .addField("⠀", "[Github](https://github.com/Oribuin/Lil-Ori/)", false)
-                .addField("⠀", "Website Coming Soon", false)
-                .addField("Guilds", "" + e.getJDA().getGuilds().size(), false)
+                .addField("Github", "[Link](https://github.com/Oribuin/Lil-Ori/)", true)
+                .addField("Website", "Coming Soon", true)
+                .addField("Guilds", "" + e.getJDA().getGuilds().size(), true)
                 .addField("Users", "" + e.getJDA().getUsers().size(), true)
                 .addField("Commands", String.valueOf(e.getClient().getCommands().size()), true);
 
