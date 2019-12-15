@@ -6,12 +6,12 @@ import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
 import me.oribuin.commands.admin.bot.GitHub;
 import me.oribuin.commands.admin.bot.PermList;
 import me.oribuin.commands.admin.bot.SayCMD;
-import me.oribuin.commands.admin.channel.ChClone;
 import me.oribuin.commands.admin.channel.ChCreate;
 import me.oribuin.commands.admin.channel.ChDelete;
 import me.oribuin.commands.admin.channel.ChSlowmode;
 import me.oribuin.commands.admin.guild.GuClone;
 import me.oribuin.commands.admin.ori.*;
+import me.oribuin.commands.fun.Cookie;
 import me.oribuin.commands.fun.EightBall;
 import me.oribuin.commands.fun.GayMeter;
 import me.oribuin.commands.hangout.MsgLog;
@@ -20,21 +20,20 @@ import me.oribuin.commands.information.bot.*;
 import me.oribuin.commands.information.guild.*;
 import me.oribuin.commands.information.user.UserAvatar;
 import me.oribuin.commands.information.user.UserInfo;
-import me.oribuin.commands.moderation.Ban;
-import me.oribuin.commands.moderation.Kick;
-import me.oribuin.commands.moderation.Purge;
+import me.oribuin.commands.moderation.*;
 import me.oribuin.commands.music.JoinVC;
 import me.oribuin.commands.music.LeaveVC;
 import me.oribuin.commands.testers.EditTime;
 import me.oribuin.commands.testers.Tester;
+import me.oribuin.events.James;
 import me.oribuin.events.MentionBot;
 import me.oribuin.events.MentionOri;
+import me.oribuin.events.Startup;
 import net.dv8tion.jda.api.AccountType;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
-import net.dv8tion.jda.api.entities.Invite;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import javax.security.auth.login.LoginException;
@@ -53,19 +52,8 @@ public class Main extends ListenerAdapter {
 
         builder.setPrefix(";");
         builder.useHelpBuilder(false);
-        //  Bot is in Online Mode
-//        /*
 
         builder.setStatus(OnlineStatus.ONLINE);
-        builder.setActivity(Activity.streaming("v1.0.8", "https://github.com/Oribuin/Lil-Ori/"));
-//        */
-
-        // Bot is in Offline Mode
-        /*
-        builder.setStatus(OnlineStatus.DO_NOT_DISTURB);
-        builder.setActivity(Activity.playing("In Offline Mode"));
-         */
-
 
         builder.addCommands(
                 // Info Commands
@@ -84,13 +72,13 @@ public class Main extends ListenerAdapter {
                 new GuClone(),
                 // Channels
 
-                new ChCreate(), new ChDelete(), new ChSlowmode(), new ChClone(), new EditTime(),
+                new ChCreate(), new ChDelete(), new ChSlowmode(), new EditTime(),
 
                 //Moderation
-                new Purge(), new Kick(), new Ban(),
+                new Purge(), new Kick(), new Ban(), new Mute(),
 
                 //Fun
-                new GayMeter(), new EightBall(), new SayCMD(),
+                new GayMeter(), new EightBall(), new SayCMD(), new Cookie(),
                 //Information
                 // User
                 new UserAvatar(), new UserInfo(),
@@ -99,6 +87,9 @@ public class Main extends ListenerAdapter {
                 // Guild
                 new GuildInfo(), new GuildRoles(waiter), new GuildMembers(waiter), new GuildChannels(waiter),
 
+                // Roles
+                new RoleInfo(),
+
                 //Music
                 // Basic Voice Channel
                 new JoinVC(), new LeaveVC()
@@ -106,9 +97,13 @@ public class Main extends ListenerAdapter {
         );
 
         CommandClient client = builder.build();
-         JDA jda = new JDABuilder(AccountType.BOT)
+        JDA jda = new JDABuilder(AccountType.BOT)
                 .setToken(Settings.TOKEN)
-                .addEventListeners(client, waiter, new MentionOri(), new MentionBot())
+                .addEventListeners(client, waiter,
+                        new MentionOri(),
+                        new MentionBot(),
+                        new James(),
+                        new Startup())
                 .build();
 
         System.out.println(" ");

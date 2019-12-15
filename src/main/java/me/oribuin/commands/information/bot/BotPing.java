@@ -21,7 +21,6 @@ public class BotPing extends Command {
     @Override
     protected void execute(CommandEvent e) {
         long ping = e.getJDA().getGatewayPing();
-        //int ping = 300;
 
         EmbedBuilder em = new EmbedBuilder()
                 .setAuthor("Latency", "https://github.com/Oribuin/Lil-Ori/")

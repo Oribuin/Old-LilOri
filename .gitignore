@@ -37,3 +37,4 @@ src/main/java/me/oribuin/main/FormatSaves
 src/main/java/me/oribuin/commands/hangout/FormatSaves
 src/main/java/me/oribuin/commands/hangout/MsgLog.java
 src/main/java/me/oribuin/commands/hangout/SayEmbed.java
+src/main/java/me/oribuin/events/James.java

@@ -25,12 +25,7 @@ public class Suggest extends Command {
         if (args.length < 2) {
             e.reply(e.getAuthor().getAsMention() + ", Please include a suggestion.");
         } else {
-            EmbedBuilder Embed = new EmbedBuilder()
-                    .setColor(Color.decode(Info.COLOR))
-                    .setFooter("Lil' Ori v" + Info.VERSION)
-                    .setAuthor("Suggestion Submitted", "https://github.com/Oribuin/Lil-Ori/")
-                    .setDescription("I have submitted your suggestion to the developers :smile:");
-            e.reply(Embed.build());
+            e.reply(e.getAuthor().getAsMention() + ", I have send your suggestion directly to admins, Thank you for suggesting!");
             if (e.getSelfMember().hasPermission(Permission.MESSAGE_MANAGE)) {
                 e.getMessage().delete().queue();
             }
@@ -39,9 +34,11 @@ public class Suggest extends Command {
                     .setColor(Color.decode(Info.COLOR))
                     .setFooter("Lil' Ori v" + Info.VERSION)
                     .setAuthor("Suggestion Incoming", "https://github.com/Oribuin/Lil-Ori/")
-                    .setDescription(e.getMessage().getContentRaw().substring(7));
+                    .setDescription("**User:** " + e.getMessage().getAuthor().getAsTag() + " (" + e.getAuthor().getId() + ")\n" +
+                    "**Server:** " + e.getMessage().getGuild().getName() + " (" + e.getMessage().getGuild().getId() + ")\n" +
+                    "**Suggestion:** " +  e.getMessage().getContentRaw().substring(8));
 
-            e.getJDA().getGuildById("608904742365822976").getTextChannelById("608904742365822976").sendMessage(Submitted.build()).queue();
+            e.getJDA().getGuildById("608904742365822976").getTextChannelById("647251528083701790").sendMessage(Submitted.build()).queue();
         }
     }
 }

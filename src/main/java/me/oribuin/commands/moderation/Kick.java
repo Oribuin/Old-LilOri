@@ -24,44 +24,62 @@ public class Kick extends Command {
     }
 
     @Override
-    protected void execute(CommandEvent e) {
-
-
+    public void execute(CommandEvent e) {
         String[] args = e.getMessage().getContentRaw().split(" ");
-
         try {
+            // If it doesn't include all arguments.
+            if (args.length < 3 || e.getMessage().getContentRaw().equals(args[1])) {
+                e.reply(e.getClient().getWarning() + " Correct usage: ;kick @user <reason>");
+                return;
 
-            if (args.length < 2) {
-                e.reply(e.getAuthor().getAsMention() + ", Please mention a user to kick from the server.");
-
-            } else if (!args[1].equalsIgnoreCase(e.getMessage().getMentionedMembers().get(0).getAsMention())) {
-                e.reply(e.getAuthor().getAsMention() + ", Please mention a user to kick from the server.");
-
+                // If args[1] doesn't equal a user to kick
             } else {
-                EmbedBuilder Embed = new EmbedBuilder()
-                        .setColor(Color.decode(Info.COLOR))
-                        .setAuthor("Kicked User", "https://github.com/Oribuin/Lil-Ori/")
-                        .setFooter("Lil' Ori v" + Info.VERSION)
-                        .setDescription("Kicked by: " + e.getAuthor().getAsMention() + "\n" + "User Kicked: " + e.getMessage().getMentionedMembers().get(0).getUser().getAsTag());
+                e.getMessage().getMentionedMembers();
+                if (e.getMessage().getMentionedMembers().isEmpty()) {
+                    e.reply(e.getClient().getWarning() + " Correct usage ;kick @user <reason>");
+                    return;
 
-                e.getGuild().getMember(e.getMessage().getMentionedUsers().get(0)).getUser().openPrivateChannel().queue(channel -> {
-                    channel.sendMessage("You were kicked from: **" + e.getMessage().getGuild().getName() + "**.").queue();
-                    e.getGuild().getMember(e.getMessage().getMentionedUsers().get(0)).kick().queue();
-                    e.reply(Embed.build());
-                });
+                    // If the user mentioned is the message author
+                } else if (e.getMessage().getMentionedMembers().get(0).equals(e.getAuthor())) {
+                    e.reply(e.getClient().getWarning() + " You cannot kick yourself.");
+                    return;
 
-                System.out.print(e.getAuthor().getAsTag() + "/ ID:" + e.getAuthor().getId() + " Just kicked: " + e.getMessage().getMentionedMembers().get(0).getUser().getAsTag() + "/ ID:" + e.getMessage().getMentionedMembers().get(0).getId() +
-                        "\nGuild: " + e.getGuild().getName());
+                    // If User mentioned is owner, or has the same/higher role than user executing command.
+                } else if (e.getMessage().getMentionedMembers().get(0).isOwner()
+                        || e.getMessage().getMentionedMembers().get(0).getRoles().get(0).getPosition() > e.getGuild().getMember(e.getAuthor()).getRoles().get(0).getPosition()
+                        || e.getMessage().getMentionedMembers().get(0).getRoles().get(0).getPosition() > e.getSelfMember().getRoles().get(0).getPosition()) {
 
+                    e.reply(e.getAuthor().getAsMention() + ", You cannot kick this user due to Role Hierarchy.");
+                    return;
+                    // If the user is a bot, this will prevent errors with DMs.
+                } else if (e.getMessage().getMentionedMembers().get(0).getUser().isBot()) {
+                    e.reply(e.getClient().getWarning() + " I cannot kick other bots!");
+                    return;
+                }
             }
 
-        } catch (IndexOutOfBoundsException err) {
+            // Embed Defining
+            EmbedBuilder Embed = new EmbedBuilder()
+                    .setColor(Color.decode(Info.COLOR))
+                    .setAuthor("You have been kicked!")
+                    .setFooter("Lil Ori v" + Info.VERSION);
+            // Define new Embed description
+            Embed.setDescription("Kicked from: " + e.getGuild().getName() + " (" + e.getGuild().getId() + ")\n" +
+                    "Kicked By: " + e.getMessage().getAuthor().getAsTag() + "\n" +
+                    "Reason: " + e.getMessage().getContentRaw().substring(args[0].length() + args[1].length() + 2));
 
-            if (e.toString().startsWith("java.lang.IndexOutOfBoundsException")) {
-                e.reply(e.getAuthor().getAsMention() + ", Please mention a user to kick from the server.");
-            } else {
-                e.reply(e.getAuthor().getAsMention() + ", You cannot kick someone Higher or Equal Role from the bot or yourself.");
-            }
+            // Tell user they were kicked
+            e.getMessage().getMentionedMembers().get(0).getUser().openPrivateChannel().queue(channel -> {
+                channel.sendMessage(Embed.build()).queue();
+            });
+
+            // Kick the user
+            e.getMessage().getMentionedMembers().get(0).kick(e.getMessage().getContentRaw().substring(args[0].length() + args[1].length() + 2)).queue();
+            // Tell author they banned the player successfully
+            e.reply(e.getClient().getSuccess() + " Successfully kicked " + e.getMessage().getMentionedMembers().get(0).getUser().getAsTag());
+        } catch (Exception err) {
+            err.printStackTrace();
+            e.reply(e.getClient().getError() + " There was an error kicking this user.\n\n```" + err.toString() + "\n````");
         }
     }
 }

@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3afbcd18-9881-4a94-8ae5-a7c4b737f36b" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,31 +25,28 @@
     </option>
   </component>
   <component name="ProjectId" id="1SnTlimrklALb65wXywVXgcrb3H" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/me/oribuin/main" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="lilori" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.16202784" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="MTCustomThemeConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\epics\Desktop\Lil-Ori\src\main\java\me\oribuin\commands\hangout" />
       <recent name="C:\Users\epics\Desktop\Lil-Ori\src\main\java\me\oribuin\commands\admin\ori" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="Startup" type="Application" factoryName="Application">
@@ -60,6 +56,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -73,6 +81,76 @@
       <updated>1572198512613</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="177" key="#Project_Structure" timestamp="1576369060314">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="177" key="#Project_Structure/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576369060314" />
+    <state x="709" y="355" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1575817012482">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="709" y="355" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1575817012482" />
+    <state x="751" y="360" width="439" height="320" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1576366999709">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="751" y="360" width="439" height="320" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576366999709" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1576196775383">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576196775383" />
+    <state width="1921" height="213" key="GridCell.Tab.0.bottom" timestamp="1576437907369">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="213" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576398164605" />
+    <state width="1921" height="213" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576437907369" />
+    <state width="1921" height="213" key="GridCell.Tab.0.center" timestamp="1576437907369">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="213" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576398164605" />
+    <state width="1921" height="213" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576437907369" />
+    <state width="1921" height="213" key="GridCell.Tab.0.left" timestamp="1576437907368">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="213" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576398164605" />
+    <state width="1921" height="213" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576437907368" />
+    <state width="1921" height="213" key="GridCell.Tab.0.right" timestamp="1576437907369">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="213" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576398164605" />
+    <state width="1921" height="213" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576437907369" />
+    <state width="1921" height="334" key="GridCell.Tab.1.bottom" timestamp="1576434688219">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="334" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576434688219" />
+    <state width="1921" height="334" key="GridCell.Tab.1.center" timestamp="1576434688219">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="334" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576434688219" />
+    <state width="1921" height="334" key="GridCell.Tab.1.left" timestamp="1576434688219">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="334" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576434688219" />
+    <state width="1921" height="334" key="GridCell.Tab.1.right" timestamp="1576434688219">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1921" height="334" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576434688219" />
+    <state x="461" y="161" key="SettingsEditor" timestamp="1575817339137">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="161" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1575817339137" />
+    <state x="342" y="94" key="new project wizard" timestamp="1576196488590">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="94" key="new project wizard/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576196488590" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1576430253091">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576430253091" />
+    <state x="623" y="225" key="search.everywhere.popup" timestamp="1576369743327">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576369743327" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/lilori$Startup.ic" NAME="Startup Coverage Results" MODIFIED="1572220580733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

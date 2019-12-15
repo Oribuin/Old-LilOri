@@ -52,6 +52,7 @@ public class Help extends Command {
 
             Embed.setDescription("**Fun Commands** \n" +
                     ";8ball - Magic 8Ball to answer questions. \n" +
+                    ";cookie @[user] - Give a user a cookie.\n" +
                     ";gay - On a scale from 1-100, How gay are you? \n\n" +
                     "Command Aliases on GitHub - ;github");
 
@@ -62,9 +63,9 @@ public class Help extends Command {
                 || args[1].equalsIgnoreCase("Moderation")) {
 
             Embed.setDescription("**Moderation Commands** \n" +
-                    ";purge [Amount]- Purge messages from the channel.\n" +
-                    ";kick @[user] - Kick a user from the server. \n" +
-                    ";ban @[user] - Ban a user from the server.\n\n" +
+                    ";purge [msgs/channel] [amount/#channel]- Purge messages from the channel.\n" +
+                    ";kick @[user] [reason] - Kick a user from the server. \n" +
+                    ";ban @[user] [reason] - Ban a user from the server.\n\n" +
                     "Command Aliases on GitHub - ;github");
 
             e.reply(e.getClient().getSuccess() + " Help Menu - Page 3");
@@ -79,7 +80,6 @@ public class Help extends Command {
                     ";say [message] - Make the bot say something.\n" +
                     "**-** :speech_balloon: Channel: \n" +
                     ";chcreate [name] - Create a channel. \n" +
-                    ";clone #[ChannelName] - Clone a Channel.\n" +
                     ";chdelete #[ChannelName] - Delete a Channel.\n" +
                     ";slowmode [time] - Set the channel's slowmode. \n\n" +
                     "Command Aliases on GitHub - ;github");
@@ -92,7 +92,7 @@ public class Help extends Command {
 
             Embed.setDescription("**Other Commands** \n" +
                     ";github - The GitHub Link for Lil' Ori. \n" +
-                    ";Suggest - Suggest new features to Lil' Ori.\n" +
+                    ";Suggest [suggestion] - Suggest new features to Lil' Ori.\n" +
                     ";Invite - The Invite Link for Lil' Ori. \n\n" +
                     "Command Aliases on GitHub - ;github");
 

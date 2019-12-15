@@ -2,13 +2,6 @@ package me.oribuin.commands.information.bot;
 
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
-import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
-import me.oribuin.main.Info;
-import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.Permission;
-import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;
-
-import java.awt.*;
 
 public class InviteLink extends Command {
     public InviteLink() {
